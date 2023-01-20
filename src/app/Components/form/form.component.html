@@ -9,16 +9,23 @@
 
             <form class="row g-3" [formGroup]="questionForm" class="form-horizontal"(ngSubmit)="onSubmit()">
                 <div class="col-md-6">
+                    <span>
                     <label for="user">Name</label>
                     <input id="user" class="form-control" type="text" formControlName="user" placeholder="full name">
+                    </span>
                 </div>
                 <div class="col-md-6">
-                    <label  class="form-label" id="email">Email</label>
-                    <input type="email" class="form-control" formControlName="email" placeholder="example@email.com">
+                    <span>
+                        <label class="form-label" id="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email" placeholder="example@email.com">
+                        <small class = "error-size alert-danger"   *ngIf="questionForm.get('email')?.hasError('email')"  >Valid Email Required</small>
+                    </span>
+                 
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label" id="phoneNumber">Phone Number</label>
                     <input type="text" class="form-control"  placeholder="xxx-xxx-xxxx" formControlName= "phoneNumber">
+                    <small class = "error-size alert-danger"  *ngIf="questionForm.get('phoneNumber')?.hasError('minlength')">Your Phone Number Must Have 10 Characters</small>
                 </div>
 
 

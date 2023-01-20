@@ -1,2 +1,18 @@
 
-<h1>PRODUCTS</h1>
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <ng-container *ngFor="let item of productList" alt=" ">
+                <div class="col-md-4 col-xs-12">
+                    <img src="{{item.image}}" alt="">
+                    <h5 style = "white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+                    <p></p>
+                    <p></p>
+                    <button class="btn btn-success">Add To Cart</button>
+                </div>
+                
+            </ng-container>
+        </div>
+
+    </div>
+</div>
